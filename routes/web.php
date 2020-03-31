@@ -14,8 +14,27 @@
 //Route::get('/', function () {
 //    return view('welcome');
 //});
+
+
 Route::get('/', 'HomeController@index');
-Route::get('/articles', 'ArticlesController@index');
-Route::get('/contact', 'ContactController@index');
-Route::get('/articles/{post_title}', 'ArticlesController@show');
+Route::get('/articles/', 'ArticlesController@index');
+Route::get('welcome', 'ArticlesController@list');
+Route::get('/articles/{post_title}', 'ArticlesController@affiche');
+
+Route::get('/contact', 'ContactController@create');
 Route::post('/contact','ContactController@store');
+
+
+
+Auth::routes();
+
+   
+Route::middleware('auth')->group(function () {
+    // All routes and resource routes defined in this Closure are protected by the `auth` middleware
+    Route::post('/{posts}/comments', 'CommentController@store')->name('comments.store');
+    // other routes...
+    
+
+});
+
+Route::resource('posts', 'ArticlesController');
