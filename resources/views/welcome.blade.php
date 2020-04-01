@@ -5,7 +5,7 @@
 <ul>
 @foreach ( $posts as $post )
 
-  <li><a href="http://127.0.0.1:8000/Articles/{{$post->post_name}}">{{ $post->post_title}} </a></li>
+  <li><a href="http://127.0.0.1:8000/articles/{{$post->post_name}}">{{ $post->post_title}} </a></li>
 
 @endforeach
 </ul>

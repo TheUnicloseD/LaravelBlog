@@ -17,5 +17,5 @@
 Route::get('/', 'HomeController@index');
 Route::get('/articles', 'ArticlesController@index');
 Route::get('/contact', 'ContactController@index');
-Route::get('/articles/{post_title}', 'ArticlesController@show');
+Route::get('/articles/{post_name}', 'ArticlesController@show');
 Route::post('/contact','ContactController@store');
