@@ -1,15 +1,20 @@
-@extends('layouts/main')
+@extends('layouts.app')
 @section('content')
-<h1>Home</h1>
-<h1>Articles</h1>
+
+<h1>SAH QUEL BLOG LARAVEL</h1>
+
+<h3>Réalisé par Abdessami GHODBANE et Romain PINEL--GERMAIN | M1 WIC</h3>
+
+<p>Voici les trois derniers articles publiés :</p>
+
 <ul>
 @foreach ( $posts as $post )
 
-  <li><a href="http://127.0.0.1:8000/articles/{{$post->post_name}}">{{ $post->post_title}} </a></li>
+  <li><a href="http://127.0.0.1:8000/posts/show/{{$post->post_title}}">{{ $post->post_title}} </a></li>
 
 @endforeach
 </ul>
-<h1>Contacts</h1>
+
 
 
 @endsection
