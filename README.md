@@ -7,71 +7,91 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## Informations générales
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Ce projet est une application web traitant les bases du framework Laravel. En utilisant une base de données SQLite, le but est de créer plusieurs fonctionnalités.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Démarrage
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1- Dans l’invite de commande, placez-vous dans le répertoire que vous souhaitez et faites la commande :  
 
-## Learning Laravel
+![image](https://user-images.githubusercontent.com/62068763/79251590-a0635700-7e80-11ea-906b-e9866fc80c75.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+2- Une fois cloné, ouvrez le dossier LaravelBlog. A la racine du projet, ouvrez le fichier .env via un éditeur, et modifiez le chemin de DB_DATABASE en votre propre chemin. Exemple :  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+![image](https://user-images.githubusercontent.com/62068763/79254807-91cb6e80-7e85-11ea-8d1b-f80e7af472b7.png)
 
-## Laravel Sponsors
+3- Une fois ce fichier modifié, retournez dans l’invite de commande. Placez-vous dans le répertoire contenant le projet et utilisez la commande :  
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+![image](https://user-images.githubusercontent.com/62068763/79251924-1ff12600-7e81-11ea-8baa-cb4ae2e7c692.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+4- Sur un navigateur web, copiez l'adresse du lien affiché en dessous de la commande précédente. Exemple :  
 
-## Contributing
+![image](https://user-images.githubusercontent.com/62068763/79253684-e66dea00-7e83-11ea-991b-3f4c523a33ce.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Fonctionnalités
 
-## Code of Conduct
+0 – TP2 complété 
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+La page d’Accueil affiche un texte de bienvenue et les 3 derniers articles publiés.  
+La page Articles affiche une liste de tous les articles divisés en plusieurs ‘pages’ de 5 articles.  
+La page d’un article s’affiche lorsque l’utilisateur clique sur « Voir ». Cette page affiche toutes les informations de l’article présentent dans la table posts de la base de données.  
+  
+La page contact affiche un formulaire afin d’envoyer un message. Le message est créé dans une vue utilisant le Markdown. Grâce à Mailtrap, les tests d’envois ont été effectué.  
+Pour tester cette fonctionnalité, il faut créer un compte simple et rapide sur [Mailtrap](https://mailtrap.io/).  
+Une fois connecté, un username et un password vont vous être confié.  
+Enfin, dans le fichier .env à la racine du projet, modifiez les champs MAIL_USERNAME et MAIL_PASSWORD par vos propres informations. Vous recevrez donc les messages de contact dans votre boite mail Mailtrap.  
 
-## Security Vulnerabilities
+![image](https://user-images.githubusercontent.com/62068763/79254082-7ca21000-7e84-11ea-9459-cc5fe9582563.png)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1 – Gestion des commentaires
+
+Sous chaque article, tous les utilisateurs peuvent poster un commentaire. Une fois publié, ce commentaire contiendra le contenu, le nom de l’utilisateur ainsi que la date à laquelle il a soumis le commentaire. L’utilisateur est redirigé vers la page de connexion s’il souhaite commenter un article sans être connecté.
+
+2 – CRUD des articles
+
+Quatre options sont disponibles pour tous les articles. CREATE, READ, UPDATE et DELETE.  
+Si l’utilisateur ne s’est pas connecté (donc un visiteur), alors il pourra seulement voir les articles.  
+Si l’utilisateur est connecté, alors il pourra voir les articles et ajouter un article.  
+Si l’utilisateur est l’auteur de l’article, alors il pourra éditer et supprimer son article.  
+Enfin l’administrateur pourra faire les quatre options sur tous les articles.
+
+3 – Identification / Authentification qui protège l’accès à l’administration
+
+L’administrateur a accès à une page « Liste des utilisateurs ». Il peut changer le rôle d’un utilisateur, modifier le nom et l’email de chaque utilisateur (même le sien) et supprimer des utilisateurs.  
+  
+Sur l’application, le visiteur peut s’enregistrer et se connecter afin de profiter des fonctionnalités.
+Il peut aussi réinitialiser son mot de passe en cas de perte. 
+
+4 – Ajout de rôles utilisateurs 
+
+Deux rôles ont été ajouté à l’application : admin et user. Tous les nouveaux utilisateurs seront affectés au rôle user.
+
+Pour tester :  
+Administrateur - email : admin@admin.fr | mot de passe : password  
+Utilisateur - email : user@user.fr | mot de passe : password
+
+5 – Ajout de fichiers média pour les articles
+
+Un article pourra contenir une image de manière optionnelle lors de la création d’un article.  
+En éditant son article, l’auteur peut modifier ou ajouter une image si besoin.
+
+6- Identification avec Google et Github en utilisant Socialite
+
+Une connexion via un compte Google ou Github est possible sur cette application web. Même avec ce type d’identification, les utilisateurs sont affectés au rôle user. En créant une application sur [Google for developper](https://developers.google.com/) et [Github for developper](https://developer.github.com/program/), un CLIENT_ID et un CLIENT_PASSWORD vous serons affectés.  
+  
+Pour tester ces connexions, dans le fichier .env à la racine du projet, modifiez les champs MAIL_USERNAME et MAIL_PASSWORD par vos propres informations.  Exemple pour Github :  
+
+![image](https://user-images.githubusercontent.com/62068763/79254589-40bb7a80-7e85-11ea-85c9-04c3cc6a9bba.png)
+
+## Remarques
+
+La connexion via Facebook n’est pas encore opérationnelle à cause d’une erreur :
+Argument 1 passed to Illuminate\Auth\SessionGuard::login() must implement interface Illuminate\Contracts\Auth\Authenticatable
+
+## Auteurs
+
+Abdessami GHODBANE et Romain PINEL—GERMAIN, étudiants en Master MIASHS WIC.
 
 ## License
 
