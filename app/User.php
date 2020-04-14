@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'google_id'
     ];
 
     /**
@@ -45,5 +45,19 @@ class User extends Authenticatable
        return $this->hasMany('App\Posts');
    }
 
+    public function roles() {
+        return $this->belongsToMany('App\Role');
+    }
 
+    public function isAdmin(){
+        return $this->roles()->where('name', 'admin')->first();
+    }
+    
+    public function hasAnyRole(array $roles){
+        return $this->roles()->whereIn('name', $roles)->first();
+    }
+    
+    public function socialAccounts() {
+        return $this->hasMany(SocialAccount::class);
+    }
 }

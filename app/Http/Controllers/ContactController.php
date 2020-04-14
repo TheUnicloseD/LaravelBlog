@@ -3,20 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\ContactRequest;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactMail;
 
 class ContactController extends Controller
 {
-    public function index(){
+    public function create(){
       return view('contact');
 
     }
 
-    public function store(ContactRequest $request){
-      $request->validated();
-      $contact = $request->all();
-      \App\Contact::create($contact);
-      return redirect("contact")->with("message","Demande de contact envoyé");
+    public function store(){
+      $data = request()->validate([
+          'name' => 'required',
+          'email' => 'required|email',
+          'message' => 'required'
+      ]);
 
+        Mail::to('from@example.com')->send(new ContactMail($data));
+        
+        return redirect("contact")->with("success","Votre message a bien été envoyé !");
     }
 }
